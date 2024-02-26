@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
 
 const DonationSchema = new mongoose.Schema({
-    donationCategory: {type: String, required:true},
-    userEmail:String,
-    productName: {type:String, required: true},
-    productQuantity: {type: Number, required:true},
-    productPrice: {type:Number, required:true}
+   donationAmount: {type:Number, require:true},
+   donationerName:{type:String, require:true},
+   donationCategory: {type:String, require:true}
 
    
 })
