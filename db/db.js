@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
+const dotenv = require("dotenv")
+const path = require("path")
+
+dotenv.config({
+    path: path.join(process.cwd(), ".env"),
+  });
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect('mongodb://localhost:27017/donation', {
+        const conn = await mongoose.connect(`${process.env.MONGO_DB}`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
